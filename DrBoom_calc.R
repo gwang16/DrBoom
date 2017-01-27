@@ -44,5 +44,4 @@ for (trial in 1:10000){
 
 length(which(s >= 4))/length(s)
 
-library(ggplot2)
-ggplot() + geom_hist(x=s)
+data.table(s)[,paste0(.N/10000*100,"%"),keyby=s]
